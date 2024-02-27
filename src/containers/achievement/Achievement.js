@@ -23,7 +23,7 @@ export default function Achievement() {
             >
               {achievementSection.title}
             </h1>
-            <p
+            <div
               className={
                 isDark
                   ? "dark-mode subTitle achievement-subtitle"
@@ -31,7 +31,19 @@ export default function Achievement() {
               }
             >
               {achievementSection.subtitle}
-            </p>
+               {/* Début de modif pour le mien vers l'ensemble des certifications */}
+              {achievementSection.link && (
+                <a 
+                  href={achievementSection.link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {achievementSection.link.text}
+                </a>
+              )}
+            
+            </div>
+             {/* fin de modif pour le mien vers l'ensemble des certifications */}
           </div>
           <div className="achievement-cards-div">
             {achievementSection.achievementsCards.map((card, i) => {

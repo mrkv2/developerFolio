@@ -6,29 +6,46 @@
   line-height: normal;
   margin: 0px;
 }
-.achievement-subtitle {
+
+.achievement-subtitle, .subTitle {
   text-transform: uppercase;
   margin: 0px;
   margin-bottom: 50px;
-}
-.subTitle {
   color: $subTitle;
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .achievement-heading {
-    font-size: 40px;
+/* Configuration de la grille pour les cartes de réalisations */
+.achievement-cards-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 éléments par ligne */
+  gap: 1rem; /* Espacement entre les cartes */
+  margin-bottom: 50px; /* Espacement sous la grille */
+}
+
+/* Adapter le nombre de colonnes à la taille de l'écran */
+@media (max-width: 1024px) {
+  .achievement-cards-div {
+    grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne pour les écrans moyens */
   }
 }
+
 @media (max-width: 768px) {
   .achievement-heading {
     font-size: 30px;
     text-align: center;
   }
-  .achievement-subtitle {
+  .achievement-subtitle, .subTitle {
     font-size: 16px;
     line-height: normal;
     text-align: center;
   }
+  .achievement-cards-div {
+    grid-template-columns: 1fr; /* 1 élément par ligne pour les petits écrans */
+  }
+}
+
+/* Styles supplémentaires pour les cartes, comme fourni précédemment */
+.certificate-card {
+  background-color: $lightBackground2;
+  /* autres styles */
 }
