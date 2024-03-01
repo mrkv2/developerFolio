@@ -35,7 +35,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/mrkv2",
   linkedin: "https://www.linkedin.com/in/stephane-simon-kv2/",
-  //gmail: "kv2webmaster@gmail.com",
+  gmail: "kv2webmaster@gmail.com",
   //gitlab: "",
   //facebook: "https://www.facebook.com/stephane.simon.756412/?locale=fr_FR",
   //medium: "",
@@ -89,6 +89,10 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-node"
     },
     {
+      skillName: "github",
+      fontAwesomeClassname: "fab fa-github"
+    },
+    {
       skillName: "swift",
       fontAwesomeClassname: "fab fa-swift"
     },
@@ -115,9 +119,38 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "docker",
       fontAwesomeClassname: "fab fa-docker"
+    },
+    {
+      skillName: "joomla",
+      fontAwesomeClassname: "fab fa-joomla"
+    },
+    {
+      skillName: "wordpress",
+      fontAwesomeClassname: "fab fa-wordpress"
+    },
+    {
+      skillName: "drupal",
+      fontAwesomeClassname: "fab fa-drupal"
+    },
+    {
+      skillName: "magento",
+      fontAwesomeClassname: "fab fa-magento"
+    },
+    {
+      skillName: "grav",
+      fontAwesomeClassname: "fab fa-grav"
+    },
+    {
+      skillName: "typo3",
+      fontAwesomeClassname: "fab fa-typo3"
+    },
+    {
+      skillName: "umbraco",
+      fontAwesomeClassname: "fab fa-umbraco"
     }
     
-  ],
+    
+    ],
   display: true // Set false to hide this section, defaults to true
 };
 
@@ -240,14 +273,14 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
+  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
   display: true // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Des projets réalisés !",
+  title: "Des sites web réalisés !",
   subtitle: "QUELQUES STARTUPS ET ENTREPRISES QUE J'AI AIDÉES À CRÉER LEUR TECH 👍",
     
   projects: [
@@ -255,6 +288,7 @@ const bigProjects = {
       image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
       projectName: "Site et communication dans le Batiment",
       projectDesc: "Construire une présence numérique nécessite du temps, mais aussi de la constance.",
+      technologies: ["HTML", "CSS", "Sass", "React.js"],
       footerLink: [
         {
           name: "Visitez le site web",
@@ -264,9 +298,26 @@ const bigProjects = {
       ]
     },
     {
+      image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
+      projectName: "Site et communication dans le Batiment",
+      projectDesc: "Construire une présence numérique nécessite du temps, mais aussi de la constance.",
+      technologies: ["HTML", "CSS", "Sass", "React.js"],
+      footerLink: [
+        {
+          name: "Visitez le site web",
+          url: "https://parquet-renovation.fr"
+        },
+        {
+          name: "Wordpress",
+          url: ""
+        }
+    ]
+    },
+    {
       image: require("./assets/images/sitewebpourcoach.jpg"),
       projectName: "Site et communication dans le coaching capillaire",
       projectDesc: "Un site web est un porte avion, piece maitresse d'une escadre qu'il structure...  ",
+      technologies: ["HTML", "CSS", "Sass", "React.js"],
       footerLink: [
         {
           name: "Visitez le site web",
@@ -374,26 +425,26 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: false// Set false to hide this section, defaults to true
 };
 
 // Talks Sections
 
 const talkSection = {
-  title: "TALKS",
+  title: "Découverte de projet",
   subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
+    "Faisabilitée, cout, conseils... Top pour Booster un projet 😅"
   ),
 
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      title: "Consultation gratuite",
+      subtitle: "Réservez un créneau",
+      slides_url: "https://kv2.fr/contact-devis-conseils-webmaster/",
+      event_url: "https://wa.me/message/UPIY4EFXXNFQB1"
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -411,8 +462,7 @@ const podcastSection = {
 
 const contactInfo = {
   title: "Contact ☎️",
-  subtitle: "Vous avez un projet ? Naissant ou à faire évoluer ?",
-   email_address: "contact@kv2.fr"
+  subtitle: "Vous avez un projet ? Naissant ou à faire évoluer ?",   
 };
 
 

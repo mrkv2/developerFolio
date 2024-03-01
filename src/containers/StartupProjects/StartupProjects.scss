@@ -64,6 +64,12 @@
   gap: 1rem 1rem;
 }
 
+.project-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .project-card-footer span.project-tag {
   background: $buttonColor;
   color: $lightBackground3;
@@ -76,10 +82,24 @@
   justify-content: center;
   white-space: nowrap;
   line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
+  margin: 0.5rem; /* Espacement entre les boutons */
   padding: 0 0.75em;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: all 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.project-card-footer span.project-tag:hover {
+  transform: translateY(-3px); /* Effet de léger décalage vers le haut */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce au survol */
+}
+.technologies {
+  display: flex;
+  flex-wrap: wrap; // Permet aux boutons de passer à la ligne lorsque l'espace est insuffisant
+}
+
+.project-button {
+  margin-right: 10px; // Espace entre chaque bouton de technologie
+  margin-bottom: 10px; // Espace en bas de chaque bouton de technologie
 }
 
 @media (max-width: 768px) {

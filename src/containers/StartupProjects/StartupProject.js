@@ -1,10 +1,12 @@
-import React, {useContext} from "react";
+// Importez React et useContext
+import React, { useContext } from "react";
 import "./StartupProjects.scss";
-import {bigProjects} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { bigProjects } from "../../portfolio";
+import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
+  // Fonction pour ouvrir une URL dans un nouvel onglet
   function openUrlInNewTab(url) {
     if (!url) {
       return;
@@ -13,10 +15,15 @@ export default function StartupProject() {
     win.focus();
   }
 
-  const {isDark} = useContext(StyleContext);
+  // Récupérer le thème actuel
+  const { isDark } = useContext(StyleContext);
+
+  // Vérifier si les projets doivent être affichés
   if (!bigProjects.display) {
     return null;
   }
+
+  // Rendu du composant
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="projects">
@@ -33,6 +40,7 @@ export default function StartupProject() {
           </p>
 
           <div className="projects-container">
+            {/* Mappez chaque projet */}
             {bigProjects.projects.map((project, i) => {
               return (
                 <div
@@ -43,6 +51,7 @@ export default function StartupProject() {
                       : "project-card project-card-light"
                   }
                 >
+                  {/* Affichez l'image du projet s'il y en a une */}
                   {project.image ? (
                     <div className="project-image">
                       <img
@@ -52,12 +61,16 @@ export default function StartupProject() {
                       ></img>
                     </div>
                   ) : null}
+
+                  {/* Détails du projet */}
                   <div className="project-detail">
+                    {/* Nom du projet */}
                     <h5
                       className={isDark ? "dark-mode card-title" : "card-title"}
                     >
                       {project.projectName}
                     </h5>
+                    {/* Description du projet */}
                     <p
                       className={
                         isDark ? "dark-mode card-subtitle" : "card-subtitle"
@@ -65,12 +78,28 @@ export default function StartupProject() {
                     >
                       {project.projectDesc}
                     </p>
+
+                    {/* Afficher les boutons pour les technologies utilisées */}
+                    <div className="technologies">
+                      {project.technologies.map((tech, j) => (
+                        <button
+                          key={j}
+                          className={
+                            isDark ? "dark-mode project-button" : "project-button"
+                          }
+                        >
+                          {tech}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Liens de pied de page */}
                     {project.footerLink ? (
                       <div className="project-card-footer">
-                        {project.footerLink.map((link, i) => {
+                        {project.footerLink.map((link, j) => {
                           return (
                             <span
-                              key={i}
+                              key={j}
                               className={
                                 isDark ? "dark-mode project-tag" : "project-tag"
                               }

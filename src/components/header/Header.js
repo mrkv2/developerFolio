@@ -51,7 +51,7 @@ function Header() {
           )}        
           {viewOpenSource && (
             <li>
-              <a href="#opensource"></a>
+              <a href="#opensource">Open source</a>
             </li>
           )}
           {viewAchievement && (
@@ -66,11 +66,11 @@ function Header() {
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a href="#talks">Consultation</a>
             </li>
           )}
           <li>
-            <a href="#contact">Me joindre</a>
+            <a href="#contact">Contact</a>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
