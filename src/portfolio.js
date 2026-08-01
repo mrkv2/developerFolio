@@ -4,7 +4,7 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
-
+import "./index.css"; // S'assurer que le fichier est bien importé
 // Splash Screen
 
 const splashScreen = {
@@ -23,7 +23,7 @@ const greeting = {
   username: "Stéphane SIMON",
   title: "Salutations, je suis Stéphane",
   subTitle: emoji(
-    "Autodidacte passioné 🚀 Webmaster et intégrateur web JavaScript / Reactjs / Nodejs / React Native et plein d'autres libraries, framworks et techno très cool  🤙 ."
+    "Webmaster 360° 🚀  – Développeur & intégrateur web depuis 2011. Spécialiste JavaScript, TypeScript, PHP, Python, React, Next.js, Node.js, Laravel, Symfony, WordPress, WooCommerce, PrestaShop, Magento et bien plus. Plus de 70 certifications, des centaines de projets réalisés 🤙."
   ),
   resumeLink:
     "https://kv2.fr", // Set to empty to hide the button
@@ -49,7 +49,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "Ce que je fais...",
-  subTitle: "Webmaster intégrateur web j'utilise :",
+  subTitle: "Developpeur intégrateur web j'utilise :",
   skills: [
     emoji(
       "⚡ Développez des interfaces front-end/utilisateur hautement interactives pour vos applications Web"
@@ -147,6 +147,18 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "umbraco",
       fontAwesomeClassname: "fab fa-umbraco"
+    },
+    {
+      "skillName": "astro",
+      "fontAwesomeClassname": "fas fa-asterisk"
+    },
+    {
+      "skillName": "bootstrap",
+      "fontAwesomeClassname": "fab fa-bootstrap"
+    },
+    {
+      "skillName": "n8n",
+      "fontAwesomeClassname": "fas fa-cogs"
     }
     
     
@@ -162,7 +174,7 @@ const educationInfo = {
     
     {
       schoolName: "Formation en continue",
-      logo: require("./assets/images/openclassroom.jpg"),
+      logo: require("./assets/images/etudiant.webp"),
       subHeader: "Eternel étudiant",
       duration: "janvier 2011 - Jusqu'à maintenant...",
       desc: "Développent Web, Webmarketing...",
@@ -173,7 +185,7 @@ const educationInfo = {
     },
     {
       schoolName: "Openclassroom",
-      logo: require("./assets/images/openclassroom.jpg"),
+      logo: require("./assets/images/openclassroom.png"),
       subHeader: "Intégrateur web Bac+2",
       duration: "janvier 2023 - Décembre 2023",
       desc: "Intégrateur web dominante front-end",
@@ -211,7 +223,7 @@ const techStack = {
     },
     {
       Stack: "Web Marketing",
-      progressPercentage: "70%"
+      progressPercentage: "90%"
     },
     {
       Stack: "Hébergement web sécurisé",
@@ -263,8 +275,7 @@ const workExperiences = {
         "Des centaines de création diverses.",
         "Et toujours pas perdu l'envie d'avoir envie, c'est meme mon moteur de vie !!!",
         "..."
-      ]
-      
+      ]      
     }
   ]
 };
@@ -273,55 +284,102 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
+  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
   display: true // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Des sites web réalisés !",
+  title: "+ plus 400 projets web réalisés depuis 2011 !",
   subtitle: "QUELQUES STARTUPS ET ENTREPRISES QUE J'AI AIDÉES À CRÉER LEUR TECH 👍",
     
   projects: [
     {
-      image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
-      projectName: "Site et communication dans le Batiment",
-      projectDesc: "Construire une présence numérique nécessite du temps, mais aussi de la constance.",
-      technologies: ["HTML", "CSS", "Sass", "React.js"],
+      image: require("./assets/images/nerdtek.png"),
+      projectName: "Site web - Média",
+      projectDesc: "Nerdtek.fr est un projet web dédié à la cybersécurité, l'OSINT et la tech. Nous avons accompagné sa création en apportant expertise technique et optimisation SEO pour offrir une plateforme riche en contenus spécialisés et accessibles aux passionnés du domaine.",
+      technologies: ["Wordpress custom", "Google Analytics GA4", "API Graph", "Vue.js", "PHP"],
       footerLink: [
         {
           name: "Visitez le site web",
-          url: "https://parquet-renovation.fr"
+          url: "https://nerdtek.fr"
         }
         //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
-      projectName: "Site et communication dans le Batiment",
-      projectDesc: "Construire une présence numérique nécessite du temps, mais aussi de la constance.",
-      technologies: ["HTML", "CSS", "Sass", "React.js"],
+      image: require("./assets/images/simon.jpg"),
+      projectName: "Site Web - Portfolio",
+      projectDesc: "Un site portfolio met en avant les réalisations d’un professionnel ou d’une agence. Il sert à démontrer une expertise, capter des prospects et générer des opportunités via un design soigné et une présentation efficace des projets. ",
+      technologies: ["React.js", "Node.js", "Gatsby.js", "API Github", "API Linkedin"],
+      footerLink: [
+        {
+          name: "Vous y êtes déjà !",
+          url: "https://simon.wf"
+        }      
+    ]
+    },
+    {
+      image: require("./assets/images/nerdshop.jpg"),
+      projectName: "Site Web - E-commerce",
+      projectDesc: "Un site e-commerce permet la vente en ligne de produits ou services. Optimisé pour le SEO et l’expérience utilisateur, il vise à convertir les visiteurs en clients grâce à une navigation fluide et des fiches produits attractives. ",
+      technologies: ["Woocommerce custom", "WAF", "Google Analytics GA4", "API Google", "Pixel"],
       footerLink: [
         {
           name: "Visitez le site web",
-          url: "https://parquet-renovation.fr"
-        },
-        {
-          name: "Wordpress",
-          url: ""
+          url: "https://nerdshop.fr"
         }
+      
+    ]
+    },
+    {
+      image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
+      projectName: "Site Web - Vitrine",
+      projectDesc: "Un site vitrine présente une entreprise, ses services et ses valeurs. Il sert à établir une présence en ligne crédible et à générer des contacts qualifiés via un design professionnel et une optimisation SEO locale. ",
+      technologies: ["React.js", "Node.js", "Javascript", "SCSS", "JPX"],
+      footerLink: [
+        {
+          name: "Vous y êtes déjà !",
+          url: "https://simon.wf"
+        }
+          ]
+    },
+    {
+      image: require("./assets/images/annuaire.jpg"),
+      projectName: "Site Web - Annuaire",
+      projectDesc: "Un site vitrine présente une entreprise, ses services et ses valeurs. Il sert à établir une présence en ligne crédible et à générer des contacts qualifiés via un design professionnel et une optimisation SEO locale. ",
+      technologies: ["Wordpress Headless", "llMS", "Google Analytics GA4", "API", "Clarity"],
+      footerLink: [
+        {
+          name: "Visitez le site web",
+          url: "https://yvelines-service.fr"
+        }
+      
+    ]
+    },
+    {
+      image: require("./assets/images/bank.jpg"),
+      projectName: "Site Web - Intranet",
+      projectDesc: "Un site intranet est une plateforme interne destinée aux employés d’une entreprise. Il centralise les documents, outils et communications pour améliorer la collaboration et l’efficacité au sein de l’organisation. ",
+      technologies: ["React.js", "Node.js", "Joomla", "Nexcloud", "Geo Fencing"],
+      footerLink: [
+        {
+          name: "Obtenir une étude de projet",
+          url: "https://kv2.fr/contact-devis-conseils-webmaster/"
+        }
+      
     ]
     },
     {
       image: require("./assets/images/sitewebpourcoach.jpg"),
-      projectName: "Site et communication dans le coaching capillaire",
-      projectDesc: "Un site web est un porte avion, piece maitresse d'une escadre qu'il structure...  ",
-      technologies: ["HTML", "CSS", "Sass", "React.js"],
+      projectName: "Mais aussi...",
+      projectDesc: "Les sites communautaires connectent des passionnés, les sites éducatifs forment en ligne, les sites SaaS offrent des outils web, les sites de streaming diffusent du contenu, et les sites comparateurs aident à choisir les meilleurs services. ",
+      technologies: ["Wordpress", "Google Analytics GA4", "Vue.js", "PHP"],
       footerLink: [
         {
-          name: "Visitez le site web",
-          url: "https://sweetycrepus.fr/"
+          name: "Obtenir une étude mon projet",
+          url: "https://kv2.fr/contact-devis-conseils-webmaster/"
         }
       ]
     }     
@@ -349,6 +407,7 @@ const achievementSection = {
         "Aidez votre équipe à finaliser le nouveau site internet d'une architecte d'intérieur. Vous utiliserez Javascript pour que les éléments du site se créent de manière dynamique en communiquant avec une API. Mise en oeuvre, Javascript, API, Figma.",
       image: require("./assets/images/sophie.jpg"),
       imageAlt: "Google Code-In Logo",
+      technologies: ["Javascript", "HTML", "SASS", "Local storage"],
       footerLink: [
         {name: "Certifications", url: "https://www.linkedin.com/in/stephane-simon-kv2/details/certifications/"},
         {
@@ -360,7 +419,8 @@ const achievementSection = {
     {
       title: "Projet Openclassroom : Kasa ",
       subtitle:
-        "Implémentez le front end de Kasa, une application de locaton de logements. Vous mettrez en place des composants avec React, et les routes avec react router. Mise en oeuvre, React, Sacss, Animation CSS.",
+        "Implémentez le front end de Kasa, une application de locaton de logements. Vous mettrez en place des composants avec React, et les routes avec react router. Mise en oeuvre, React, SCSS, Animation CSS.",
+      technologies: ["React.js", "React Router", "Animation CSS", "Sass"],
       image: require("./assets/images/kasa.jpg"),
       imageAlt: "Google Assistant Action Logo",
       footerLink: [
@@ -376,6 +436,7 @@ const achievementSection = {
       title: "Projet Openclassroom : Argent Bank",
       subtitle:
         "Implémentez le front-end d'une application bancaire avec React. Vous venez d’intégrer Argent Bank comme développeur front-end. Argent Bank est une nouvelle banque en ligne qui souhaite percer dans le secteur bancaire. Mise en oeuvre, React Toolkit, JSX, Swagger/API.",
+      technologies: ["React.js", "Redux Toolkit", "API Rest", "SCSS", "JSX"],
       image: require("./assets/images/bank.jpg"),
       imageAlt: "Google Assistant Action Logo",
       footerLink: [
@@ -390,6 +451,7 @@ const achievementSection = {
     {
       title: "Projet Openclassroom : Oh my food",
       subtitle: "Gérer l'inteface visuel d'un site de restauration et le rendre dynamique avec du CSS moderne. Mise en oeuvre, Developpent Mobile-Fisrt, Animation CSS, Git/ Github, Sass, Html.",
+      technologies: ["Javascript", "Animation CSS", "Mobile First", "SCSS"],
       image: require("./assets/images/creationsitewebpourrestaurateur.jpg"),
       imageAlt: "certification openclassroom",
       footerLink: [
@@ -433,7 +495,7 @@ const blogSection = {
 const talkSection = {
   title: "Découverte de projet",
   subtitle: emoji(
-    "Faisabilitée, cout, conseils... Top pour Booster un projet 😅"
+    "Fiabilité, coût, conseils... La recette idéale pour dynamiser votre projet! 💪🚀"
   ),
 
   talks: [

@@ -49,3 +49,35 @@
   background-color: $lightBackground2;
   /* autres styles */
 }
+// Achievement.scss
+
+.achievement-card {
+  position: relative; 
+.card-content {
+    position: relative; 
+.technologies {
+      display: flex;
+      flex-wrap: wrap; // Permet aux boutons de passer à la ligne lorsque l'espace est insuffisant
+      justify-content: center;
+      margin-bottom: 20px; // Espace en bas de la liste de boutons de technologie
+.technology-button {
+        margin-right: 5px; // Espace entre chaque bouton de technologie
+        margin-bottom: 0px; // Espace en bas de chaque bouton de technologie
+        margin-top: 0px;
+        padding: 8px 16px; // Remplissage interne pour chaque bouton
+        border-radius: 4px; // Bordures arrondies pour un aspect plus moderne
+        background-color: $buttonColor; // Couleur de fond des boutons
+        color: rgb(241, 241, 241); // Couleur du texte des boutons
+        font-size: 12px; // Taille de la police
+        font-weight: 500; // Poids de la police
+        cursor: default; // Désactive le curseur pointer
+        transition: background-color 0.3s ease, border-color 0.3s ease; // Transition fluide pour l'effet de survol
+        
+        &:hover {
+          background-color: $buttonHover; // Couleur de fond des boutons au survol
+          border-color: $buttonHover; // Couleur de la bordure au survol
+        }
+      }
+    }
+  }
+}
