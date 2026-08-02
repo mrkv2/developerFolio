@@ -5,6 +5,7 @@ import {illustration, skillsSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import Button from "../../components/button/Button";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Skills() {
@@ -13,10 +14,14 @@ export default function Skills() {
     return null;
   }
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <section
+      className={isDark ? "dark-mode main" : "main"}
+      id="skills"
+      aria-labelledby="skills-title"
+    >
       <div className="skills-main-div">
         <Fade left duration={1000}>
-          <div className="skills-image-div">
+          <div className="skills-image-div" aria-hidden="true">
             {illustration.animated ? (
               <DisplayLottie animationData={codingPerson} />
             ) : (
@@ -30,6 +35,7 @@ export default function Skills() {
         <Fade right duration={1000}>
           <div className="skills-text-div">
             <h1
+              id="skills-title"
               className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >
               {skillsSection.title}{" "}
@@ -43,26 +49,22 @@ export default function Skills() {
             >
               {skillsSection.subTitle}
             </p>
+            <div className="skills-services-grid">
+              {skillsSection.services.map(service => (
+                <article className="skills-service-card" key={service.title}>
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                </article>
+              ))}
+            </div>
+            <h2 className="skills-stack-title">Technologies principales</h2>
             <SoftwareSkill />
-            <div>
-              {skillsSection.skills.map((skills, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
-                    }
-                  >
-                    {skills}
-                  </p>
-                );
-              })}
+            <div className="skills-cta">
+              <Button text="Discuter de votre projet" href="#contact" />
             </div>
           </div>
         </Fade>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,16 +2,18 @@
 
 .skills-main-div {
   display: flex;
+  align-items: center;
+  gap: 3rem;
   width: 100%;
   overflow: hidden;
 }
 
 .skills-text-div {
-  margin-left: 50px;
+  flex: 1.6;
 }
 
-.skills-main-div > * {
-  flex: 1;
+.skills-image-div {
+  flex: 0.8;
   margin-bottom: 30px;
 }
 
@@ -21,11 +23,58 @@
 }
 
 .skills-heading {
-  font-size: 56px;
-  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 500;
 }
 .subTitle {
   color: $subTitle;
+}
+.skills-text-subtitle {
+  max-width: 850px;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.skills-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.skills-service-card {
+  padding: 1.25rem;
+  background: $lightBackground2;
+  border: 1px solid $lightBorder1;
+  border-radius: 10px;
+  box-shadow: $lightBoxShadowDark 0 8px 24px -18px;
+}
+.skills-service-card h2 {
+  margin: 0 0 0.65rem;
+  color: $titleColor;
+  font-size: 1.1rem;
+}
+.skills-service-card p {
+  margin: 0;
+  color: $cardSubtitle;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.dark-mode .skills-service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.dark-mode .skills-service-card h2,
+.dark-mode .skills-service-card p {
+  color: $textColorDark;
+}
+.skills-stack-title {
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
+}
+.skills-cta {
+  display: flex;
+  margin-top: 1rem;
 }
 
 /* Media Query */
@@ -58,7 +107,13 @@
     text-align: center;
   }
   .skills-image-div {
-    /* display: none; */
     order: 2;
+    max-width: 360px;
+  }
+  .skills-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .skills-cta {
+    justify-content: center;
   }
 }

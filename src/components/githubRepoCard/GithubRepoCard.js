@@ -4,22 +4,15 @@ import {Fade} from "react-reveal";
 import {formatFileSizeDisplay} from "../../utils";
 
 export default function GithubRepoCard({repo, isDark}) {
-  function openUrlInNewTab(url, name) {
-    if (!url) {
-      console.log(`URL in ${name} is undefined`);
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-
   return (
     <Fade bottom duration={1000} distance="20px">
       <div>
-        <div
+        <a
           className={isDark ? "dark-card-mode repo-card-div" : "repo-card-div"}
-          key={repo.node.id}
-          onClick={() => openUrlInNewTab(repo.node.url, repo.node.name)}
+          href={repo.node.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${repo.node.name} sur GitHub (nouvel onglet)`}
         >
           <div className="repo-name-div">
             <svg
@@ -88,7 +81,7 @@ export default function GithubRepoCard({repo, isDark}) {
               <p>{formatFileSizeDisplay(repo.node.diskUsage)}</p>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </Fade>
   );

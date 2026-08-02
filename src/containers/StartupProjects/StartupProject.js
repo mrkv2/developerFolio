@@ -1,22 +1,13 @@
 // Importez React et useContext
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import "./StartupProjects.scss";
-import { bigProjects } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {bigProjects} from "../../portfolio";
+import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
-  // Fonction pour ouvrir une URL dans un nouvel onglet
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-
   // Récupérer le thème actuel
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
 
   // Vérifier si les projets doivent être affichés
   if (!bigProjects.display) {
@@ -26,9 +17,11 @@ export default function StartupProject() {
   // Rendu du composant
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="projects">
+      <section className="main" id="projects" aria-labelledby="projects-title">
         <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
+          <h1 className="skills-heading" id="projects-title">
+            {bigProjects.title}
+          </h1>
           <p
             className={
               isDark
@@ -43,7 +36,7 @@ export default function StartupProject() {
             {/* Mappez chaque projet */}
             {bigProjects.projects.map((project, i) => {
               return (
-                <div
+                <article
                   key={i}
                   className={
                     isDark
@@ -58,6 +51,7 @@ export default function StartupProject() {
                         src={project.image}
                         alt={project.projectName}
                         className="card-image"
+                        loading="lazy"
                       ></img>
                     </div>
                   ) : null}
@@ -82,14 +76,16 @@ export default function StartupProject() {
                     {/* Afficher les boutons pour les technologies utilisées */}
                     <div className="technologies">
                       {project.technologies.map((tech, j) => (
-                        <button
+                        <span
                           key={j}
                           className={
-                            isDark ? "dark-mode project-button" : "project-button"
+                            isDark
+                              ? "dark-mode project-button"
+                              : "project-button"
                           }
                         >
                           {tech}
-                        </button>
+                        </span>
                       ))}
                     </div>
 
@@ -98,26 +94,29 @@ export default function StartupProject() {
                       <div className="project-card-footer">
                         {project.footerLink.map((link, j) => {
                           return (
-                            <span
+                            <a
                               key={j}
                               className={
                                 isDark ? "dark-mode project-tag" : "project-tag"
                               }
-                              onClick={() => openUrlInNewTab(link.url)}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${link.name} (nouvel onglet)`}
                             >
                               {link.name}
-                            </span>
+                            </a>
                           );
                         })}
                       </div>
                     ) : null}
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

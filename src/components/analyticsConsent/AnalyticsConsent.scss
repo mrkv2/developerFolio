@@ -1,0 +1,73 @@
+@import "../../_globalColor";
+
+.analytics-consent {
+  position: fixed;
+  z-index: 10000;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  color: $textColor;
+  background: $lightBackground1;
+  border: 1px solid $lightBorder1;
+  border-radius: 12px;
+  box-shadow: $lightBoxShadowDark 0 10px 30px -10px;
+  text-align: left;
+}
+
+.analytics-consent h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.analytics-consent p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.analytics-consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.analytics-consent button {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 2px solid $buttonColor;
+  border-radius: 6px;
+  color: $buttonColor;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analytics-consent button:hover,
+.analytics-consent button:focus-visible,
+.analytics-consent .analytics-consent-accept {
+  color: $lightBackground3;
+  background: $buttonColor;
+}
+
+@media (max-width: 650px) {
+  .analytics-consent {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .analytics-consent-actions {
+    justify-content: stretch;
+  }
+
+  .analytics-consent button {
+    flex: 1;
+  }
+}

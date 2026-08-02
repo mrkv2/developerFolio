@@ -1,6 +1,6 @@
-fs = require("fs");
+const fs = require("fs");
 const https = require("https");
-process = require("process");
+const process = require("process");
 require("dotenv").config();
 
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
@@ -16,6 +16,15 @@ const ERR = {
   requestFailedMedium:
     "The request to Medium didn't succeed. Check if Medium username in your .env file is correct."
 };
+
+function keepExistingData(source, statusCode) {
+  console.warn(
+    `${source} data could not be refreshed${
+      statusCode ? ` (HTTP ${statusCode})` : ""
+    }. Continuing with the existing local data.`
+  );
+}
+
 if (USE_GITHUB_DATA === "true") {
   if (GITHUB_USERNAME === undefined) {
     throw new Error(ERR.noUserName);
@@ -72,7 +81,9 @@ if (USE_GITHUB_DATA === "true") {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestFailed);
+      keepExistingData("GitHub", res.statusCode);
+      res.resume();
+      return;
     }
 
     res.on("data", d => {
@@ -87,7 +98,7 @@ if (USE_GITHUB_DATA === "true") {
   });
 
   req.on("error", error => {
-    throw error;
+    console.warn(`${ERR.requestFailed} ${error.message}`);
   });
 
   req.write(data);
@@ -108,7 +119,9 @@ if (MEDIUM_USERNAME !== undefined) {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      keepExistingData("Medium", res.statusCode);
+      res.resume();
+      return;
     }
 
     res.on("data", d => {
@@ -123,7 +136,7 @@ if (MEDIUM_USERNAME !== undefined) {
   });
 
   req.on("error", error => {
-    throw error;
+    console.warn(`${ERR.requestFailedMedium} ${error.message}`);
   });
 
   req.end();

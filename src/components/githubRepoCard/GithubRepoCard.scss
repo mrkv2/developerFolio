@@ -9,8 +9,11 @@
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
 }
-.repo-card-div:hover {
+.repo-card-div:hover,
+.repo-card-div:focus-visible {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
 

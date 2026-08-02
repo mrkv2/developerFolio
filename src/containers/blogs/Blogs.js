@@ -21,7 +21,7 @@ export default function Blogs() {
       : NaN;
   }
   useEffect(() => {
-    if (blogSection.displayMediumBlogs === "true") {
+    if (blogSection.displayMediumBlogs) {
       const getProfileData = () => {
         fetch("/blogs.json")
           .then(result => {
@@ -61,8 +61,7 @@ export default function Blogs() {
         </div>
         <div className="blog-main-div">
           <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
-            mediumBlogs === "Error"
+            {!blogSection.displayMediumBlogs || mediumBlogs === "Error"
               ? blogSection.blogs.map((blog, i) => {
                   return (
                     <BlogCard

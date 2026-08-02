@@ -14,7 +14,7 @@ export default function Profile() {
   }
 
   useEffect(() => {
-    if (openSource.showGithubProfile === "true") {
+    if (openSource.showGithubProfile) {
       const getProfileData = () => {
         fetch("/profile.json")
           .then(result => {
@@ -38,7 +38,7 @@ export default function Profile() {
   }, []);
   if (
     openSource.display &&
-    openSource.showGithubProfile === "true" &&
+    openSource.showGithubProfile &&
     !(typeof prof === "string" || prof instanceof String)
   ) {
     return (

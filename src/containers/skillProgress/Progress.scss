@@ -1,70 +1,96 @@
 @import "../../_globalColor";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
-}
-.meter > span {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
-  position: relative;
-  overflow: hidden;
-}
-.skill {
-  line-height: 3.5vw;
-}
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
-}
-.skills-container {
-  display: flex;
+.process-container {
   width: 90%;
+  margin: 4rem auto;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
-  height: auto;
 }
 
-/* Media Query */
+.process-header {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
 
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
-  }
-  .skills-image {
-    display: none;
-    order: 2;
+.process-header .skills-heading {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.process-header .subTitle {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: process;
+}
+
+.process-card {
+  height: 100%;
+  padding: 1.4rem;
+  background: $lightBackground2;
+  border: 1px solid $lightBorder1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: $lightBoxShadowDark 0 8px 24px -18px;
+}
+
+.process-number {
+  display: block;
+  margin-bottom: 1rem;
+  color: $buttonColor;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.process-card h2 {
+  margin: 0 0 0.75rem;
+  color: $titleColor;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.process-card p {
+  margin: 0;
+  color: $cardSubtitle;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.dark-mode .process-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.dark-mode .process-card h2,
+.dark-mode .process-card p {
+  color: $textColorDark;
+}
+
+@media (max-width: 1024px) {
+  .process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column;
+@media (max-width: 600px) {
+  .process-container {
+    margin: 2.5rem auto;
   }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+
+  .process-header {
+    text-align: center;
   }
-  .skills-image {
-    display: none;
-    order: 2;
+
+  .process-steps {
+    grid-template-columns: 1fr;
   }
 }

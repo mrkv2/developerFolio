@@ -22,13 +22,17 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
-  const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
-    useState(true);
+  const prefersDark =
+    window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
+  const prefersReducedMotion =
+    window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  const [isDark, setIsDark] = useLocalStorage("isDark", prefersDark);
+  const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(
+    splashScreen.enabled && !prefersReducedMotion
+  );
 
   useEffect(() => {
-    if (splashScreen.enabled) {
+    if (splashScreen.enabled && !prefersReducedMotion) {
       const splashTimer = setTimeout(
         () => setIsShowingSplashAnimation(false),
         splashScreen.duration
@@ -37,7 +41,7 @@ const Main = () => {
         clearTimeout(splashTimer);
       };
     }
-  }, []);
+  }, [prefersReducedMotion]);
 
   const changeTheme = () => {
     setIsDark(!isDark);
@@ -51,19 +55,21 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <StartupProject />
-            <Achievement />
-            <Projects />
-            <Blogs />            
-            <Twitter />
-            <Podcast />
-            <Profile />
-            <Talks />
+            <main id="main-content" tabIndex="-1">
+              <Greeting />
+              <Skills />
+              <StackProgress />
+              <Education />
+              <WorkExperience />
+              <StartupProject />
+              <Achievement />
+              <Projects />
+              <Blogs />
+              <Twitter />
+              <Podcast />
+              <Profile />
+              <Talks />
+            </main>
             <Footer />
             <ScrollToTopButton />
           </>

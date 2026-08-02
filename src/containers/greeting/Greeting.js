@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import {Fade} from "react-reveal";
-import emoji from "react-easy-emoji";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -21,12 +20,11 @@ export default function Greeting() {
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
+              <p className="greeting-eyebrow">{greeting.eyebrow}</p>
               <h1
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
               >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                {greeting.title}
               </h1>
               <p
                 className={
@@ -37,13 +35,21 @@ export default function Greeting() {
               >
                 {greeting.subTitle}
               </p>
+              <ul
+                className="greeting-highlights"
+                aria-label="Quelques chiffres clés"
+              >
+                {greeting.highlights.map(highlight => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
               <SocialMedia />
               <div className="button-greeting-div">
-                <Button text="Contact" href="#contact" />
+                <Button text="Parler de votre projet" href="#contact" />
                 {greeting.resumeLink && (
                   <Button
-                    text="En savoir plus..."
-                    newTab={true}
+                    text="Voir mes réalisations"
+                    newTab={false}
                     href={greeting.resumeLink}
                   />
                 )}
@@ -55,7 +61,7 @@ export default function Greeting() {
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
-                alt="man sitting on table"
+                alt="Illustration d’un développeur travaillant sur son ordinateur"
                 src={require("../../assets/images/manOnTable.svg")}
               ></img>
             )}

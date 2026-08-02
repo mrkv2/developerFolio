@@ -7,8 +7,12 @@ import StyleContext from "../../contexts/StyleContext";
 export default function SplashScreen() {
   const {isDark} = useContext(StyleContext);
   return (
-    <div className={isDark ? "dark-mode splash-container" : "splash-container"}>
-      <div className="splash-animation-container">
+    <div
+      className={isDark ? "dark-mode splash-container" : "splash-container"}
+      role="status"
+      aria-label="Chargement du portfolio"
+    >
+      <div className="splash-animation-container" aria-hidden="true">
         <DisplayLottie animationData={splashScreen.animation} />
       </div>
       <div className="splash-title-container">

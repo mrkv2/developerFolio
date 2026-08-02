@@ -7,7 +7,8 @@
   margin: 0px;
 }
 
-.achievement-subtitle, .subTitle {
+.achievement-subtitle,
+.subTitle {
   text-transform: uppercase;
   margin: 0px;
   margin-bottom: 50px;
@@ -17,7 +18,7 @@
 /* Configuration de la grille pour les cartes de réalisations */
 .achievement-cards-div {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 éléments par ligne */
+  grid-template-columns: repeat(4, 1fr); /* 4 éléments par ligne */
   gap: 1rem; /* Espacement entre les cartes */
   margin-bottom: 50px; /* Espacement sous la grille */
 }
@@ -25,7 +26,10 @@
 /* Adapter le nombre de colonnes à la taille de l'écran */
 @media (max-width: 1024px) {
   .achievement-cards-div {
-    grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne pour les écrans moyens */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 éléments par ligne pour les écrans moyens */
   }
 }
 
@@ -34,7 +38,8 @@
     font-size: 30px;
     text-align: center;
   }
-  .achievement-subtitle, .subTitle {
+  .achievement-subtitle,
+  .subTitle {
     font-size: 16px;
     line-height: normal;
     text-align: center;
@@ -52,15 +57,17 @@
 // Achievement.scss
 
 .achievement-card {
-  position: relative; 
-.card-content {
-    position: relative; 
-.technologies {
+  position: relative;
+  .card-content {
+    position: relative;
+    .technologies {
       display: flex;
       flex-wrap: wrap; // Permet aux boutons de passer à la ligne lorsque l'espace est insuffisant
       justify-content: center;
       margin-bottom: 20px; // Espace en bas de la liste de boutons de technologie
-.technology-button {
+      .technology-button {
+        display: inline-flex;
+        align-items: center;
         margin-right: 5px; // Espace entre chaque bouton de technologie
         margin-bottom: 0px; // Espace en bas de chaque bouton de technologie
         margin-top: 0px;
@@ -71,8 +78,9 @@
         font-size: 12px; // Taille de la police
         font-weight: 500; // Poids de la police
         cursor: default; // Désactive le curseur pointer
+        border: 1px solid transparent;
         transition: background-color 0.3s ease, border-color 0.3s ease; // Transition fluide pour l'effet de survol
-        
+
         &:hover {
           background-color: $buttonHover; // Couleur de fond des boutons au survol
           border-color: $buttonHover; // Couleur de la bordure au survol

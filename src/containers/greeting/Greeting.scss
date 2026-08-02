@@ -15,6 +15,7 @@
 
 .greeting-main {
   display: flex;
+  gap: 2rem;
 }
 
 .subTitle {
@@ -29,20 +30,68 @@
   flex: 1;
   margin-bottom: 30px;
 }
+.greeting-text-div {
+  display: flex;
+  align-items: center;
+}
+.greeting-eyebrow {
+  margin: 0 0 0.75rem;
+  color: $buttonColor;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 .button-greeting-div {
   display: flex;
+  gap: 0.75rem;
   margin-top: 20px;
+}
+.button-greeting-div > div:nth-child(2) .main-button {
+  color: $buttonColor;
+  background: transparent;
+}
+.button-greeting-div > div:nth-child(2) .main-button:hover,
+.button-greeting-div > div:nth-child(2) .main-button:focus-visible {
+  color: $textColorDark;
+  background: $buttonColor;
 }
 
 .greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.05;
   color: $textColor !important;
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+  max-width: 760px;
+  margin: 1.5rem 0;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.65;
+}
+.greeting-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.greeting-highlights li {
+  padding: 0.55rem 0.8rem;
+  color: $textColor;
+  background: $lightBackground2;
+  border: 1px solid $lightBorder1;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.dark-mode .greeting-highlights li {
+  color: $textColorDark;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .greeting-image-div > img {
@@ -84,16 +133,15 @@
 
 /* Media Query */
 @media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-p {
-    font-size: 20px;
+  .greeting-main {
+    gap: 1rem;
   }
 }
 @media (max-width: 768px) {
   .button-greeting-div {
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
   .greeting-text {
     font-size: 30px;
@@ -103,6 +151,12 @@
     font-size: 16px;
     line-height: normal;
     text-align: center;
+  }
+  .greeting-eyebrow {
+    text-align: center;
+  }
+  .greeting-highlights {
+    justify-content: center;
   }
   .greeting-main {
     display: block;

@@ -1,43 +1,37 @@
 import React from "react";
 import "./Progress.scss";
-import {illustration, techStack} from "../../portfolio";
+import {techStack} from "../../portfolio";
 import {Fade} from "react-reveal";
-import Build from "../../assets/lottie/build";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 
 export default function StackProgress() {
   if (techStack.viewSkillBars) {
     return (
       <Fade bottom duration={1000} distance="20px">
-        <div className="skills-container">
-          <div className="skills-bar">
-            <h1 className="skills-heading">Compétences</h1>
-            {techStack.experience.map((exp, i) => {
-              const progressStyle = {
-                width: exp.progressPercentage
-              };
-              return (
-                <div key={i} className="skill">
-                  <p>{exp.Stack}</p>
-                  <div className="meter">
-                    <span style={progressStyle}></span>
-                  </div>
-                </div>
-              );
-            })}
+        <section
+          className="process-container"
+          id="process"
+          aria-labelledby="process-title"
+        >
+          <div className="process-header">
+            <h1 className="skills-heading" id="process-title">
+              {techStack.title}
+            </h1>
+            <p className="subTitle">{techStack.subtitle}</p>
           </div>
-
-          <div className="skills-image">
-            {illustration.animated ? (
-              <DisplayLottie animationData={Build} />
-            ) : (
-              <img
-                alt="Skills"
-                src={require("../../assets/images/skill.svg")}
-              />
-            )}
-          </div>
-        </div>
+          <ol className="process-steps">
+            {techStack.steps.map((step, index) => (
+              <li key={step.title}>
+                <article className="process-card">
+                  <span className="process-number" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h2>{step.title}</h2>
+                  <p>{step.description}</p>
+                </article>
+              </li>
+            ))}
+          </ol>
+        </section>
       </Fade>
     );
   }
