@@ -51,12 +51,21 @@ export default function Achievement() {
             </div>
           </div>
           <div className="achievement-cards-div">
-            {achievementSection.achievementsCards.map((card, i) => {
+            {achievementSection.achievementsCards.slice(0, 4).map((card, i) => {
               return (
                 <article key={i} className="achievement-card">
                   <div className="technologies">
                     {card.technologies.map((tech, j) => (
-                      <span key={j} className="technology-button">
+                      <span
+                        key={j}
+                        className="technology-button"
+                        style={{
+                          "--achievement-tech-index": j,
+                          "--achievement-tech-duration": `${
+                            5.2 + (j % 3) * 0.65
+                          }s`
+                        }}
+                      >
                         {tech}
                       </span>
                     ))}

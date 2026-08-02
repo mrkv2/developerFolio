@@ -1,98 +1,230 @@
 @import "../../_globalColor";
 
 .repo-card-div {
-  color: $githubRepoCardColor;
-  background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  padding: 2rem;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: block;
-  text-decoration: none;
-}
-.repo-card-div:hover,
-.repo-card-div:focus-visible {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-.repo-stats {
+  position: relative;
   display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  font-size: 13px;
-  color: $githubRepoCardRepoCardStatsColor;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 1.4rem;
+  overflow: hidden;
+  color: $textColor;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(85, 25, 139, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(39, 22, 56, 0.09);
+  box-sizing: border-box;
+  transition: transform 220ms ease, border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
-.repo-left-stat {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
+.repo-card-div::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, $buttonColor, #645beb, #00a98f);
+  content: "";
+}
+
+.repo-card-div:hover {
+  border-color: rgba(85, 25, 139, 0.3);
+  box-shadow: 0 20px 42px rgba(39, 22, 56, 0.15);
+  transform: translateY(-4px);
+}
+
+.repo-card-topline,
+.repo-card-footer {
   display: flex;
-}
-
-.language-color {
-  width: 10px;
-  height: 10px;
-  background-color: $githubRepoCardLanguageColorBG;
-  margin-right: 0.25rem;
-  border-radius: 100%;
-}
-
-.repo-left-stat span {
-  display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  margin-right: 0.75rem;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.repo-category {
+  color: $buttonColor;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.repo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: #4c5965;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.repo-status i {
+  width: 7px;
+  height: 7px;
+  background: #00a98f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(0, 169, 143, 0.13);
 }
 
 .repo-name-div {
   display: flex;
   align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
 }
 
 .repo-svg {
-  margin-right: 0.5rem;
-  min-width: 16px;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: $buttonColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .repo-name {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: $githubRepoCardRepoNameColor;
-  margin-bottom: 0.75rem;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  min-width: 0;
+  margin: 0;
   overflow: hidden;
-  margin: 0px;
-  height: 30px;
-}
-
-.repo-star-svg {
-  margin-right: 0.3rem;
+  color: inherit;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .repo-description {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  margin: 1rem 0;
+  color: $cardSubtitle;
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.repo-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.repo-technologies li {
+  padding: 0.34rem 0.62rem;
+  color: $buttonColor;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  font-weight: 750;
+  background: rgba(85, 25, 139, 0.07);
+  border: 1px solid rgba(85, 25, 139, 0.14);
+  border-radius: 999px;
+}
+
+.repo-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(85, 25, 139, 0.11);
+}
+
+.repo-activity {
+  color: $subTitle;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+.repo-code-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.1rem 0.95rem;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(135deg, $buttonColor, $buttonHover);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(85, 25, 139, 0.22);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.repo-code-link::after {
+  font-size: 0.95rem;
+  content: "↗";
+  transition: transform 180ms ease;
+}
+
+.repo-code-link:hover,
+.repo-code-link:focus-visible {
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(85, 25, 139, 0.3);
+  transform: translateY(-2px);
+}
+
+.repo-code-link:hover::after,
+.repo-code-link:focus-visible::after {
+  transform: translate(2px, -2px);
+}
+
+.repo-code-link:focus-visible {
+  outline: 3px solid rgba(100, 91, 235, 0.45);
+  outline-offset: 3px;
 }
 
 .dark-card-mode {
-  background-color: $darkBackground;
   color: $textColorDark;
-}
-.dark-card-mode p {
-  color: $textColorDark;
+  background: #202636;
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
-.dark-card-mode .repo-svg {
-  fill: $textColorDark;
+.dark-card-mode .repo-category,
+.dark-card-mode .repo-technologies li {
+  color: #d2ceff;
 }
 
-.dark-card-mode:hover {
-  background-color: $buttonColor !important;
-  box-shadow: 0px 0px 16px $darkBoxShadow;
+.dark-card-mode .repo-description,
+.dark-card-mode .repo-status,
+.dark-card-mode .repo-activity {
+  color: #cfd2dc;
+}
+
+.dark-card-mode .repo-technologies li {
+  background: rgba(108, 99, 255, 0.13);
+  border-color: rgba(201, 197, 255, 0.2);
+}
+
+.dark-card-mode .repo-card-footer {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 420px) {
+  .repo-card-topline,
+  .repo-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .repo-code-link {
+    align-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repo-card-div,
+  .repo-code-link,
+  .repo-code-link::after {
+    transition: none;
+  }
+
+  .repo-card-div:hover,
+  .repo-code-link:hover {
+    transform: none;
+  }
 }

@@ -58,6 +58,45 @@
 
 .achievement-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+
+  > .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 84px;
+    margin-bottom: 0.85rem;
+    padding: 0.55rem 0.25rem;
+    align-content: center;
+
+    .technology-button {
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+      padding: 8px 14px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      background: linear-gradient(135deg, $buttonColor, $buttonHover);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      box-shadow:
+        0 7px 16px rgba(85, 25, 139, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      cursor: default;
+      animation: achievement-tech-float var(--achievement-tech-duration)
+        ease-in-out infinite alternate;
+      animation-delay: calc(var(--achievement-tech-index) * -0.65s);
+      will-change: transform;
+    }
+
+    .technology-button:nth-child(even) {
+      animation-name: achievement-tech-float-reverse;
+    }
+  }
+
   .card-content {
     position: relative;
     .technologies {
@@ -87,5 +126,35 @@
         }
       }
     }
+  }
+}
+
+@keyframes achievement-tech-float {
+  0% {
+    transform: translate3d(-3px, 2px, 0) rotate(-0.7deg);
+  }
+  50% {
+    transform: translate3d(3px, -5px, 0) rotate(0.5deg);
+  }
+  100% {
+    transform: translate3d(5px, 1px, 0) rotate(-0.25deg);
+  }
+}
+
+@keyframes achievement-tech-float-reverse {
+  0% {
+    transform: translate3d(4px, -1px, 0) rotate(0.7deg);
+  }
+  50% {
+    transform: translate3d(-4px, 4px, 0) rotate(-0.45deg);
+  }
+  100% {
+    transform: translate3d(-5px, -2px, 0) rotate(0.35deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achievement-card > .technologies .technology-button {
+    animation: none;
   }
 }

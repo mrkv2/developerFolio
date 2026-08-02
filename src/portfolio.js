@@ -21,7 +21,7 @@ const illustration = {
 
 const greeting = {
   username: "Stéphane SIMON",
-  eyebrow: "Stéphane Simon — Webmaster & développeur web",
+  eyebrow: "Stéphane Simon — Développeur Intégrateur web",
   title: "Des solutions web utiles, performantes et durables.",
   subTitle: emoji(
     "Depuis 2011, j’accompagne entreprises, artisans et porteurs de projets dans la création, la refonte et l’évolution de leurs sites et outils numériques — du conseil à la mise en ligne."
@@ -139,39 +139,58 @@ https://fontawesome.com/icons?d=gallery */
 
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
+  eyebrow: "Parcours & formation",
+  title: "Diplômes",
+  subtitle:
+    "Les diplômes posent les bases. La pratique, la veille et plus de 100 certifications permettent de garder des compétences utiles face aux évolutions du numérique.",
   schools: [
     {
       schoolName: "Formation continue",
       logo: require("./assets/images/etudiant.webp"),
-      subHeader: "Eternel étudiant",
-      duration: "janvier 2011 - Jusqu'à maintenant...",
-      desc: "Développement web et webmarketing...",
+      badge: "100+ certifications",
+      subHeader: "Formation continue",
+      duration: "Depuis janvier 2011",
+      desc: "Un apprentissage permanent nourri par les projets réels et les évolutions du numérique.",
       descBullets: [
-        "Veille technologique, passages de certifications... ",
-        "Déjà plus de 100 certifications ! Voir LinkedIn."
-      ]
+        "Veille technologique et expérimentation régulière",
+        "Plus de 100 certifications techniques et marketing"
+      ],
+      link: {
+        text: "Voir les certifications",
+        url: "https://www.linkedin.com/in/stephane-simon-kv2/details/certifications/"
+      }
     },
     {
-      schoolName: "Openclassroom",
+      schoolName: "OpenClassrooms",
       logo: require("./assets/images/openclassroom.png"),
+      badge: "Bac+2",
       subHeader: "Intégrateur web Bac+2",
-      duration: "janvier 2023 - Décembre 2023",
-      desc: "Intégrateur web à dominante front-end",
+      duration: "Janvier — décembre 2023",
+      desc: "Formation professionnalisante d’intégrateur web à dominante front-end.",
       descBullets: [
-        "Formation complète aux nouvelles technologies du développement web",
-        "Html, CSS, SASS, REACT"
-      ]
+        "Conception d’interfaces responsives et accessibles",
+        "HTML, CSS, Sass, JavaScript et React"
+      ],
+      link: {
+        text: "Voir le diplôme",
+        url: "https://www.linkedin.com/in/stephane-simon-kv2/details/education/"
+      }
     },
     {
       schoolName: "Formation 3B",
       logo: require("./assets/images/formation3b.jpg"),
+      badge: "Bac+4",
       subHeader: "DESES",
-      duration: "Juillet 2016 - Juillet 2017",
-      desc: "Titre de dirigeant de société de sécurité privée humaine et de moyens électroniques DESES Bac+4 ",
+      duration: "Juillet 2016 — juillet 2017",
+      desc: "Titre DESES de dirigeant de société de sécurité privée, humaine et électronique — Bac+4.",
       descBullets: [
-        "Tous les aspects de la création d’entreprise, du marketing à la gestion du personnel",
-        "Domaine de la sécurité humaine ou des moyens électroniques."
-      ]
+        "Création d’entreprise, stratégie, marketing et gestion du personnel",
+        "Sécurité humaine, électronique et pilotage opérationnel"
+      ],
+      link: {
+        text: "Voir le diplôme",
+        url: "https://www.linkedin.com/in/stephane-simon-kv2/details/education/"
+      }
     }
   ]
 };
@@ -213,49 +232,38 @@ const techStack = {
 const workExperiences = {
   title: "Plus de 15 ans d’expérience numérique",
   subtitle:
-    "Un parcours construit autour de l’entrepreneuriat, du développement web et de la création de solutions numériques adaptées aux réalités du terrain.",
+    "Un écosystème où chaque projet enrichit les suivants — et où chaque entreprise profite de l’expérience collective.",
+  highlights: [
+    {value: "15+", label: "ans d’expérience"},
+    {value: "400+", label: "projets web"},
+    {value: "100+", label: "certifications"}
+  ],
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Fondateur",
+      role: "La force du collectif",
       company: "KV2",
       companylogo: require("./assets/images/kv2_logo.jpg"),
       date: "2011 – aujourd’hui",
       dateTime: "2011",
-      desc: "Accompagnement d’entreprises, d’artisans et de porteurs de projets dans leur développement numérique.",
+      desc: "KV2 permet aux PME de profiter de compétences, d’outils et de retours d’expérience mutualisés entre plusieurs entreprises.",
       descBullets: [
-        "Plus de 400 projets web réalisés.",
-        "Création, refonte, maintenance et évolution de sites.",
-        "Développement de plugins, intégrations API et outils métier.",
-        "Conseil en hébergement, sécurité, SEO et acquisition."
+        "Ressources partagées",
+        "Coûts mieux maîtrisés",
+        "Expérience multisectorielle"
       ]
     },
     {
-      role: "Fondateur",
-      company: "Bersek",
-      companylogo: require("./assets/images/bersek.jpg"),
-      date: "2017 – 2021",
-      dateTime: "2017",
-      desc: "Conception de solutions numériques appliquées aux métiers de la sécurité privée.",
-      descBullets: [
-        "Prototypage de systèmes de communication radio.",
-        "Création d’une main courante électronique.",
-        "Développement de dispositifs et scénarios NFC.",
-        "Expérimentation de solutions connectées pour les agents de terrain."
-      ]
-    },
-    {
-      role: "Créateur et apprenant permanent",
-      company: "Projets personnels & veille technologique",
+      role: "Le laboratoire de l’écosystème",
+      company: "The Inside Project",
       companylogo: require("./assets/images/inside.jpg"),
       date: "Depuis plus de 20 ans",
       dateTime: "2006",
-      desc: "Exploration continue des technologies numériques à travers des projets personnels, des prototypes et une formation permanente.",
+      desc: "The Inside Project explore, teste et prototype. Les idées éprouvées viennent ensuite nourrir les solutions proposées aux clients.",
       descBullets: [
-        "Plus de 100 certifications.",
-        "Veille technique et expérimentation régulière.",
-        "Approche pluridisciplinaire du web et du numérique.",
-        "Culture de l’apprentissage par la pratique."
+        "Veille appliquée",
+        "Prototypes & concepts",
+        "Innovation réutilisable"
       ]
     }
   ]
@@ -265,8 +273,72 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
+  eyebrow: "Code & expérimentations",
+  title: "Projets & expérimentations GitHub",
+  subtitle:
+    "Une sélection de projets qui montre différentes facettes du travail : automatiser, optimiser et construire des interfaces connectées à des API.",
+  featuredRepositories: [
+    {
+      name: "Serpapi-scrap",
+      category: "Automatisation & data",
+      summary:
+        "Un prototype Python pour collecter et structurer des données locales via API, avec une logique réutilisable pour la veille et l’analyse.",
+      status: "Prototype fonctionnel",
+      technologies: ["Python", "API", "Data"],
+      url: "https://github.com/mrkv2/Serpapi-scrap"
+    },
+    {
+      name: "ninacarducci.github.io",
+      category: "Performance & SEO",
+      summary:
+        "Optimisation complète d’un portfolio : performances, référencement, accessibilité et données structurées pour gagner en visibilité.",
+      status: "Projet finalisé",
+      technologies: ["HTML", "SEO", "Accessibilité"],
+      url: "https://github.com/mrkv2/ninacarducci.github.io"
+    },
+    {
+      name: "ArgentBank-website",
+      category: "Application React & API",
+      summary:
+        "Une interface bancaire développée avec React, gestion d’état et échanges API pour illustrer une architecture front-end applicative.",
+      status: "Projet finalisé",
+      technologies: ["React", "Redux", "API REST"],
+      url: "https://github.com/mrkv2/ArgentBank-website"
+    }
+  ],
   showGithubProfile: true, // Set true or false to show Contact profile using Github, defaults to true
   display: true // Set false to hide this section, defaults to true
+};
+
+const digitalAudit = {
+  display: true,
+  eyebrow: "Audit & accompagnement",
+  title: "Un vrai audit de vos actifs numériques",
+  subtitle:
+    "Pour une PME ou une TPE, le numérique forme un tout : site, e-commerce, identité, contenus, sécurité, SEO, SEA, réseaux sociaux, données, hébergement et outils métier doivent être analysés ensemble.",
+  steps: [
+    "Actifs numériques",
+    "Consultation gratuite",
+    "Audit complet",
+    "Feuille de route",
+    "Décision au cas par cas"
+  ],
+  findings: [
+    "Les risques techniques et les dépendances",
+    "Les pertes de performance, de visibilité ou d’acquisition",
+    "Les outils devenus coûteux, fragiles ou inutiles",
+    "Les écarts de sécurité, d’accessibilité ou de conformité",
+    "Les priorités réellement utiles à court et moyen terme"
+  ],
+  benefits: [
+    "Une vision 360°, au-delà du simple site web",
+    "Plus de 15 ans de retours d’expérience mutualisés",
+    "Des ressources adaptées au besoin réel",
+    "Une feuille de route hiérarchisée selon l’impact et le budget",
+    "Un suivi capable de construire, maintenir et faire évoluer l’ensemble"
+  ],
+  conclusion:
+    "La consultation initiale est gratuite. Si la situation nécessite une analyse approfondie, un audit complet et payant est proposé sur devis. Un suivi par KV2 n’est jamais automatique : il est étudié au cas par cas, selon les besoins et la pertinence de l’accompagnement."
 };
 
 // Some big projects you have worked on
@@ -278,98 +350,40 @@ const bigProjects = {
 
   projects: [
     {
-      image: require("./assets/images/nerdtek.png"),
-      projectName: "Site web - Média",
-      projectDesc:
-        "Nerdtek.fr est un projet web dédié à la cybersécurité, l'OSINT et la tech. Nous avons accompagné sa création en apportant expertise technique et optimisation SEO pour offrir une plateforme riche en contenus spécialisés et accessibles aux passionnés du domaine.",
-      technologies: [
-        "WordPress custom",
-        "Google Analytics GA4",
-        "API Graph",
-        "Vue.js",
-        "PHP"
-      ],
-      footerLink: [
-        {
-          name: "Visitez le site web",
-          url: "https://nerdtek.fr"
-        }
-        //  you can add extra buttons here.
-      ]
-    },
-    {
-      image: require("./assets/images/sitewebpourcoach.jpg"),
-      projectName: "Site Web - Location saisonnière",
-      projectDesc:
-        "Un site de location saisonnière avec création d’un plugin WordPress sur mesure pour gérer les réservations et synchroniser les disponibilités entre plusieurs plateformes.",
-      technologies: [
-        "WordPress custom",
-        "Création de plugin",
-        "API Booking",
-        "API Airbnb",
-        "Réservation en ligne"
-      ],
-      footerLink: [
-        {
-          name: "Visitez le site web",
-          url: "https://villa-nieves-alicante.com"
-        }
-      ]
-    },
-    {
       image: require("./assets/images/nerdshop.jpg"),
       projectName: "Site Web - E-commerce",
       projectDesc:
-        "Un site e-commerce permet la vente en ligne de produits ou services. Optimisé pour le SEO et l’expérience utilisateur, il vise à convertir les visiteurs en clients grâce à une navigation fluide et des fiches produits attractives. ",
+        "Conception, réalisation et évolution de solutions e-commerce : maintenance et TMA, optimisation des conversions, parcours O2O, contenus UGC, réseaux sociaux, acquisition et connexions aux outils métier.",
       technologies: [
-        "WooCommerce custom",
-        "WAF",
-        "Google Analytics GA4",
-        "API Google",
-        "Pixel"
+        "E-commerce",
+        "TMA",
+        "O2O & UGC",
+        "Analytics",
+        "Réseaux sociaux"
       ],
       footerLink: [
         {
-          name: "Visitez le site web",
+          name: "Voir un exemple",
           url: "https://letviva.fr"
         }
       ]
     },
     {
       image: require("./assets/images/creationsitewebentreprisebatiment.jpg"),
-      projectName: "Site Web - Artisan",
+      projectName: "Site Web - Entreprise",
       projectDesc:
-        "Un site vitrine conçu pour présenter un savoir-faire artisanal, valoriser les réalisations et générer des demandes de devis auprès d’une clientèle locale.",
+        "Un accompagnement web complet, de l’infrastructure bare metal ou VPS jusqu’au site : architecture serveur, automatisation, intégration de l’IA et développement sur tous CMS, frameworks et langages adaptés au projet.",
       technologies: [
-        "WordPress custom",
-        "SEO local",
-        "Google Analytics GA4",
-        "Formulaire de devis",
-        "WhatsApp"
-      ],
-      footerLink: [
-        {
-          name: "Visitez le site web",
-          url: "https://tapissier-laurot.fr"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/annuaire.jpg"),
-      projectName: "Site Web - Annuaire",
-      projectDesc:
-        "Un site vitrine présente une entreprise, ses services et ses valeurs. Il sert à établir une présence en ligne crédible et à générer des contacts qualifiés via un design professionnel et une optimisation SEO locale. ",
-      technologies: [
-        "WordPress Headless",
-        "LLMs",
-        "Google Analytics GA4",
-        "API",
-        "Clarity"
+        "Bare metal & VPS",
+        "Automatisation",
+        "Intégration IA",
+        "Tous CMS",
+        "Développement web"
       ],
       footerLink: [
         {
           name: "Voir un exemple",
-          url: "https://yvelines-services.fr"
+          url: "https://tapissier-laurot.fr"
         }
       ]
     },
@@ -377,31 +391,18 @@ const bigProjects = {
       image: require("./assets/images/bank.jpg"),
       projectName: "Site Web - Intranet",
       projectDesc:
-        "Un site intranet est une plateforme interne destinée aux employés d’une entreprise. Il centralise les documents, outils et communications pour améliorer la collaboration et l’efficacité au sein de l’organisation. ",
+        "Conception d’écosystèmes internes sur mesure : serveurs, intranets web, logiciels métier et applications desktop ou mobiles pour centraliser les données, automatiser les processus et faciliter le travail des équipes.",
       technologies: [
-        "React.js",
-        "Node.js",
-        "Joomla",
-        "Nextcloud",
-        "Geo Fencing"
+        "Serveurs",
+        "Intranet web",
+        "Logiciels métier",
+        "Applications desktop",
+        "Applications mobiles"
       ],
       footerLink: [
         {
           name: "Voir un exemple",
           url: "https://kv2.org/hub"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/sitewebpourcoach.jpg"),
-      projectName: "Mais aussi...",
-      projectDesc:
-        "Les sites communautaires connectent des passionnés, les sites éducatifs forment en ligne, les sites SaaS offrent des outils web, les sites de streaming diffusent du contenu, et les sites comparateurs aident à choisir les meilleurs services. ",
-      technologies: ["WordPress", "Google Analytics GA4", "Vue.js", "PHP"],
-      footerLink: [
-        {
-          name: "Obtenir une étude mon projet",
-          url: "https://kv2.fr/contact-devis-conseils-webmaster/"
         }
       ]
     }
@@ -415,7 +416,7 @@ const bigProjects = {
 const achievementSection = {
   title: emoji("Certifications 🏆 "),
   subtitle:
-    "CERTIFICATIONS, LETTRES DE RÉCOMPENSE ET QUELQUES TRUCS SYMPAS QUE J'AI RÉALISÉS ! ",
+    "+ DE 100 CERTIFICATIONS EN DÉVELOPPEMENT, INFRASTRUCTURE, MARKETING DIGITAL, DATA, CYBERSÉCURITÉ ET CONFORMITÉ.",
   link: {
     url: "https://www.linkedin.com/in/stephane-simon-kv2/",
     text: "Tout voir sur Linkedin"
@@ -597,17 +598,24 @@ const blogSection = {
 // Talks Sections
 
 const talkSection = {
-  title: "Découverte de projet",
-  subtitle: emoji(
-    "Fiabilité, coût, conseils... La recette idéale pour dynamiser votre projet! 💪🚀"
-  ),
+  eyebrow: "Étape suivante",
+  title: "Commençons par une consultation gratuite",
+  subtitle:
+    "Un premier échange pour comprendre votre situation et déterminer si un audit professionnel est utile. L’audit complet est payant et tout suivi KV2 est ensuite étudié au cas par cas.",
 
   talks: [
     {
-      title: "Consultation gratuite",
-      subtitle: "Réservez un créneau",
+      title: "Un premier avis, sans engagement",
+      subtitle:
+        "Présentez votre contexte. Nous vous indiquerons clairement si un audit approfondi est pertinent, sans présumer de la suite.",
+      reassurance: [
+        "Consultation gratuite",
+        "Audit complet sur devis",
+        "Suivi étudié au cas par cas"
+      ],
       slides_url: "https://kv2.fr/contact-devis-conseils-webmaster/",
-      event_url: "https://wa.me/message/UPIY4EFXXNFQB1"
+      event_url: "https://wa.me/message/UPIY4EFXXNFQB1",
+      website_url: "https://kv2.fr"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -650,6 +658,7 @@ export {
   techStack,
   workExperiences,
   openSource,
+  digitalAudit,
   bigProjects,
   achievementSection,
   blogSection,

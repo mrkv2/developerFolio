@@ -32,6 +32,10 @@
   height: 100%;
   box-sizing: border-box;
 }
+.achievement-card .certificate-card {
+  flex: 1;
+  width: 100%;
+}
 .certificate-detail-div {
   text-align: center;
 }
@@ -43,11 +47,20 @@
 }
 .certificate-image-div {
   position: relative;
+  width: 100%;
   height: 180px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.certificate-image-div .card-image {
+  display: block;
+  width: min(100%, 240px);
+  height: 160px;
+  max-width: 240px;
+  object-fit: contain;
+  object-position: center;
 }
 .certificate-card-footer {
   display: flex;
@@ -57,23 +70,49 @@
   margin-top: auto;
 }
 .certificate-card-footer a.certificate-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 4px;
   display: inline-flex;
-  font-size: 0.75rem;
-  min-height: 44px;
+  align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  line-height: 1.5;
+  gap: 0.5rem;
+  min-height: 44px;
   margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
+  padding: 0.15rem 1rem;
+  color: #fff;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(135deg, $buttonColor, $buttonHover);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 18px rgba(85, 25, 139, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    filter 180ms ease;
+}
+.certificate-card-footer a.certificate-tag::after {
+  font-size: 1rem;
+  line-height: 1;
+  content: "↗";
+  transition: transform 180ms ease;
 }
 a.certificate-tag:hover,
 a.certificate-tag:focus-visible {
-  background: $buttonHover;
+  color: #fff;
+  filter: saturate(1.1) brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(85, 25, 139, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+a.certificate-tag:hover::after,
+a.certificate-tag:focus-visible::after {
+  transform: translate(2px, -2px);
+}
+a.certificate-tag:focus-visible {
+  outline: 3px solid rgba(100, 91, 235, 0.45);
+  outline-offset: 3px;
 }

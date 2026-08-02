@@ -78,6 +78,10 @@ export default function StartupProject() {
                       {project.technologies.map((tech, j) => (
                         <span
                           key={j}
+                          style={{
+                            "--tech-index": j,
+                            "--tech-duration": `${5 + (j % 3) * 0.7}s`
+                          }}
                           className={
                             isDark
                               ? "dark-mode project-button"

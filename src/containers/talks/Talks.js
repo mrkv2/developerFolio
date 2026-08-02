@@ -12,9 +12,12 @@ export default function Talks() {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="talks">
+      <section className="main talk-section" id="contact" aria-labelledby="contact-title">
         <div className="talk-header">
-          <h1 className="talk-header-title">{talkSection.title}</h1>
+          <p className="talk-eyebrow">{talkSection.eyebrow}</p>
+          <h1 className="talk-header-title" id="contact-title">
+            {talkSection.title}
+          </h1>
           <p
             className={
               isDark
@@ -33,6 +36,8 @@ export default function Talks() {
                   subtitle: talk.subtitle,
                   slides_url: talk.slides_url,
                   event_url: talk.event_url,
+                  website_url: talk.website_url,
+                  reassurance: talk.reassurance,
                   image: talk.image,
                   isDark
                 }}
@@ -40,7 +45,7 @@ export default function Talks() {
             );
           })}
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

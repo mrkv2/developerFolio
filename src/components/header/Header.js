@@ -8,6 +8,7 @@ import {
   workExperiences,
   skillsSection,
   openSource,
+  digitalAudit,
   blogSection,
   talkSection,
   achievementSection
@@ -17,6 +18,7 @@ function Header() {
   const {isDark} = useContext(StyleContext);
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
+  const viewAudit = digitalAudit.display;
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
@@ -59,7 +61,12 @@ function Header() {
             )}
             {viewOpenSource && (
               <li>
-                <a href="#opensource">Open source</a>
+                <a href="#opensource">Projets</a>
+              </li>
+            )}
+            {viewAudit && (
+              <li>
+                <a href="#audit">Audit 360°</a>
               </li>
             )}
             {viewAchievement && (
@@ -74,12 +81,9 @@ function Header() {
             )}
             {viewTalks && (
               <li>
-                <a href="#talks">Consultation</a>
+                <a href="#contact">Consultation</a>
               </li>
             )}
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
             <li>
               <ToggleSwitch />
             </li>

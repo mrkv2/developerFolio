@@ -1,29 +1,45 @@
 @import "../../_globalColor";
 
+.talk-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  scroll-margin-top: 6rem;
+}
+
+.talk-header {
+  width: 100%;
+}
+
+.talk-eyebrow {
+  margin: 0 0 0.55rem;
+  color: $buttonColor;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .talk-header-title {
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 0px;
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+  font-weight: 500;
 }
 
-.talk-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
-}
-
-.subTitle {
-  color: $subTitle;
+.talk-header-subtitle {
+  max-width: 840px;
+  margin: 1rem 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 @media (max-width: 768px) {
-  .talk-header-title {
-    font-size: 30px;
-    text-align: center;
-  }
+  .talk-eyebrow,
+  .talk-header-title,
   .talk-header-subtitle {
-    font-size: 16px;
-    line-height: normal;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
   }
 }

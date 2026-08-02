@@ -53,6 +53,7 @@ if (USE_GITHUB_DATA === "true") {
               url
               id
               diskUsage
+              updatedAt
               primaryLanguage {
                 name
                 color
